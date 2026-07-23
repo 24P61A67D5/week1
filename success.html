@@ -1,24 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Registration Details</title>
+    <title>Registration Successful</title>
 </head>
 <body>
 
-<h2>Successfully Registration completed</h2>
+<h2>Registration Successful</h2>
 
-<p><strong>Name:</strong> <span id="name"></span></p>
-<p><strong>Phone:</strong> <span id="phone"></span></p>
-<p><strong>Gender:</strong> <span id="gender"></span></p>
-<p><strong>Department:</strong> <span id="department"></span></p>
+<p id="message"></p>
 
 <script>
-    const params = new URLSearchParams(window.location.search);
+const params = new URLSearchParams(window.location.search);
+const name = params.get("username");
 
-    document.getElementById("name").textContent = params.get("name");
-    document.getElementById("phone").textContent = params.get("phone");
-    document.getElementById("gender").textContent = params.get("gender");
-    document.getElementById("department").textContent = params.get("department");
+document.getElementById("message").innerHTML =
+    "Successfully Registered, <b>" + name + "</b>!";
 </script>
 
 </body>
